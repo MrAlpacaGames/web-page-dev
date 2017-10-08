@@ -1,0 +1,61 @@
+.alpaca-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+
+  .mr-alpaca-logo {
+    background-image: url(images/mr_alpaca/logo.png);
+    background-size: 400px;
+    width: 400px;
+    height: 400px;
+
+    @media only screen 
+      and (min-device-width: 320px) 
+      and (max-device-width: 568px)
+      and (-webkit-min-device-pixel-ratio: 2)
+      and (orientation: landscape) {
+        background-size: 200px;
+        width: 200px;
+        height: 200px;
+      }
+  }
+
+  .social-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .social-link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      font-size: 30px;
+    }
+
+    .icon-facebook-squared,
+    .icon-instagram,
+    .icon-blogger-rect {
+      color: #fc1f4e;
+      font-size: 60px;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .icon-blogger-rect {
+      font-size: 52px;
+      margin-left: 4px;
+      margin-right: 14px;
+    }
+
+    .social-icon:before {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
