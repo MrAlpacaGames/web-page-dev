@@ -1,9 +1,9 @@
 @mrAlpacaLogoMobile: 80px;
-@koteMobile: 150px;
+@koteMobile: 120px;
 
 .mrag-home-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 
   /*
   ╔══════════════════════════╗
@@ -18,8 +18,10 @@
     z-index: 2;
     padding: 10px 20px;
     width: 100%;
-    border-top: 1px solid #fc1f4e;
-    background-color: #fafafa;
+    border: 1px dashed @logo;
+    border-bottom: 0;
+    border-radius: 10px 10px 0 0;
+    background-color: white;
 
     .mrag-logo {
       background-image: url(images/mr_alpaca/logo.png);
@@ -55,8 +57,8 @@
       .icon-facebook-squared,
       .icon-instagram,
       .icon-blogger-rect {
-        color: #fc1f4e;
-        font-size: 48px;
+        color: @logo;
+        font-size: 40px;
         text-decoration: none;
         margin-right: 10px;
 
@@ -93,7 +95,7 @@
     top: 0;
     right: 0;
     width: 100%;
-    height: 100vh;
+    height: calc(~'100% - 110px');
 
     .mrag-kote-eggorias {
       background-image: url(images/kote/eggorias.jpg);
@@ -101,7 +103,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 100vh;
+      height: 100%;
       background-size: 130%;
       background-repeat: no-repeat;
       background-position-x: 50%;
@@ -109,18 +111,56 @@
       opacity: .8;
     }
 
+    .mrag-kote-logo,
+    .mrag-kote-trailer,
+    .mrag-kote-desc-container,
+    .mrag-download-container {
+      flex: 1 auto;
+    }
+
     .mrag-kote-logo {
       background-image: url(images/kote/logo.png);
       background-repeat: no-repeat;
-      background-size: @koteMobile;
+      background-size: 100%;
       width: @koteMobile;
-      height: @koteMobile;
+      height: 86px;
       margin: 10px auto;
     }
 
     .mrag-kote-trailer {
       width: 300px;
-      height: 200px;
+      height: 170px;
+    }
+    
+    .mrag-kote-desc-container {
+      width: 100%;
+      margin: 10px 0;
+      padding: 5px 10px;
+      border-style: double;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    .mrag-download-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      .mrag-button:not(:first-child) {
+        margin-left: 10px;
+      }
+
+      .mrag-kote-steam {
+        display: flex;
+        flex-direction: column;
+        padding-top: 2px;
+        padding-bottom: 2px;
+
+        * {
+          color: white;
+          line-height: 18px;
+        }
+      }
     }
   }
 }
