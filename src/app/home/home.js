@@ -41,7 +41,7 @@ angular.module( 'ngBoilerplate.home', [
  */
 .controller( 'HomeCtrl', function HomeController( $scope ) {
   var vm = this;
-  vm.mrAlpacaDesc = 'We are Mr. Alpaca Games, a video games studio from Bogotá, Colombia';
+  vm.mrAlpacaDesc = 'We are Mr. Alpaca Games, a video games studio from Colombia';
 })
 
 ;
