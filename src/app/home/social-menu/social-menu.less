@@ -1,0 +1,81 @@
+.social-menu-container {
+  position: fixed;
+  top: 26px;
+  left: 16px;
+  width: 160px;
+  height: auto;
+  background-color: @logo;
+
+  .row {
+    margin: 0;
+  }
+
+  .text-container {
+    width: 80%;
+    .text-center();
+    margin: 0 auto;
+
+    .text {
+      color: @white;
+      .text-center();
+    }
+  }
+
+  .tail {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    
+    border-top: 80px solid @logo;
+  }
+}
+
+.logo-container {
+  .kote-logo {
+    background-image: url(images/kote/logo.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 80%;
+    height: 90px;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+}
+
+.social-buttons {
+  width: 80%;
+  margin: 0 auto !important;
+  margin-top: 10px;
+  .text-center();
+}
+
+.social-link {
+  font-size: 1em;
+  .text-center();
+  text-decoration: none;
+  
+  &:last-child {
+    .social-icon {
+      margin-right: 0;
+    }
+  }
+
+  .social-icon {
+    color: @white;
+    font-size: 24px;
+    text-decoration: none;
+    margin-right: 10px;
+
+    &:before {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .icon-text {
+    color: @white;
+  }
+}
