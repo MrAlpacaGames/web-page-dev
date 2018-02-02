@@ -28,11 +28,11 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: @white;
   font-family: 'Asap', sans-serif;
 
   * {
-    color: @logo;
+    color: @white;
     margin: 0;
     padding: 0;
   }
@@ -46,10 +46,10 @@ body {
 .mrag-button {
   margin: 0;
   padding: 10px 20px;
-  background-color: @logo;
+  background-color: @pink;
   border: 0;
   text-align: center;
-  color: white;
+  color: @white;
   max-height: 40px;
   text-decoration: none;
 }
@@ -58,5 +58,19 @@ body {
   float: right;
 }
 
-@import '../app/home/home.less';
+.text-center {
+  text-align: center;
+}
 
+.line-through {
+  text-decoration:line-through;
+}
+
+.section-border {
+  border-bottom: 2px dashed @pink;  
+}
+
+@import '../app/home/home.less';
+@import "../app/home/social-menu/social-menu.less";
+@import "../app/home/title-bar/title-bar.less";
+@import "../app/home/trailer/trailer.less";

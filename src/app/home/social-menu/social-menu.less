@@ -1,10 +1,16 @@
 .social-menu-container {
   position: fixed;
-  top: 26px;
+  top: @header-height;
   left: 16px;
   width: 160px;
   height: auto;
-  background-color: @logo;
+  background-color: @pink;
+  z-index: 1;
+  transition: top .6s ease-out;
+
+  &.secret {
+    top: -125px;
+  }
 
   .row {
     margin: 0;
@@ -12,11 +18,10 @@
 
   .text-container {
     width: 80%;
+    margin: 10px auto;
     .text-center();
-    margin: 0 auto;
 
     .text {
-      color: @white;
       .text-center();
     }
   }
@@ -29,17 +34,17 @@
     border-left: 80px solid transparent;
     border-right: 80px solid transparent;
     
-    border-top: 80px solid @logo;
+    border-top: 80px solid @pink;
   }
 }
 
 .logo-container {
-  .kote-logo {
-    background-image: url(images/kote/logo.png);
+  .logo {
+    background-image: url(images/mr_alpaca/logo_white.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 80%;
-    height: 90px;
+    height: 128px;
     margin: 0 auto;
     margin-top: 15px;
   }
@@ -63,8 +68,11 @@
     }
   }
 
+  &:hover {
+    text-decoration: none;
+  }
+
   .social-icon {
-    color: @white;
     font-size: 24px;
     text-decoration: none;
     margin-right: 10px;
@@ -73,9 +81,5 @@
       margin: 0;
       padding: 0;
     }
-  }
-
-  .icon-text {
-    color: @white;
   }
 }
