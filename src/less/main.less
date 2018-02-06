@@ -69,15 +69,24 @@ body {
   }
 }
 
+.text-red {
+  color: @red;
+  * {
+    color: @red;
+  }
+}
+
 .line-through {
   text-decoration:line-through;
 }
 
 .section-border {
-  border-bottom: 2px dashed @pink;  
+  border-bottom: 2px dashed @pink;
+  width: 80%;
 }
 
 @import '../app/home/home.less';
 @import "../app/home/social-menu/social-menu.less";
 @import "../app/home/title-bar/title-bar.less";
 @import "../app/home/trailer/trailer.less";
+@import "../app/home/features/features.less";
