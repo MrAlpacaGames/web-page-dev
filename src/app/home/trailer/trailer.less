@@ -10,13 +10,41 @@
   }
 
   .description-container {
-    background-color: @pink;
-    margin: 20px auto;
-    border-radius: 20px;
     width: 80%;
+    margin: 20px auto;
+    background-color: @pink;
+    border-radius: 20px;
 
     .description-text {
       padding: 20px;
+    }
+  }
+
+  .platforms-container {
+    margin: 0 auto;
+    max-width: 80%;
+    height: auto;
+    text-align: center;
+
+    .text-black {
+      margin-bottom: 10px;
+    }
+
+    .platform-link {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    .platform-img {
+      height: 64px;
+
+      .steam {
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
     }
   }
 }
