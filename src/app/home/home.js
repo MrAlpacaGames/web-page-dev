@@ -39,9 +39,33 @@ angular.module( 'ngBoilerplate.home', [
 /**
  * And of course we define a controller for our route.
  */
-.controller( 'HomeCtrl', function HomeController( $scope ) {
+.controller( 'HomeCtrl', function HomeController( $scope, $window ) {
   var vm = this;
   vm.mrAlpacaDesc = 'We are Mr. Alpaca Games, a video games studio from Colombia';
+
+  activate();
+  function activate() {
+    var opThresh = 350;
+    var opFactor = 750;
+    
+    $window.addEventListener("scroll", function(event){
+      var top = this.pageYOffset;
+      var layers = document.getElementsByClassName("parallax-layer");
+      var layer, speed, yPos;
+
+      for (var i = 0; i < layers.length; i++) {
+        layer = layers[i];
+        speed = layer.getAttribute('data-speed');
+        yPos = -(top * speed / 100);
+        if (i < layers.length - 1) {
+          layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
+        }
+        else {
+          layer.setAttribute('style', 'transform: translate3d(-50%, ' + yPos + 'px, 0px)');
+        }
+      }
+    });
+  }
 })
 
 ;

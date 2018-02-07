@@ -1,34 +1,84 @@
+@kote-logo-height: 340px;
+@eggorias-top: 302px;
+
 .title-bar-container {
   position: relative;
   width: 100%;
-  height: 480px;
 
   .parallax-container {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+    position: relative;
     width: 100%;
-    height: 100%;
     background-color: @white;
   }
 
-  .parallax {
-    font-size: 64px;
-    color: @black;
-    text-align: center;
-  }
+  #parallax-wrapper {
+    position: relative;
+    display: block;
+    background-image: url(images/kote/Sea.png);
+    background-size: auto 1080px;
 
-  .logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    background-image: url(images/kote/logo.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    width: 262px;
-    height: 180px;
-    transform: translate(-50%, -50%);
-    opacity: .9;
+    &.parallax-art,
+    .parallax-layer {
+      height: 1000px;
+    }
+
+    .parallax-layer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-size: auto 483px;
+      background-repeat: no-repeat;
+    }
+    
+    #parallax-img-0 {
+      background-image: url(images/kote/Eggorias.png);
+      background-size: 960px 540px;
+      top: @eggorias-top;
+      left: calc(~'50% - 480px');
+    }
+
+    #parallax-img-1 {
+      background-image: url(images/kote/Airheads.png);
+      background-size: 960px 540px;
+      top: calc(@eggorias-top~' + 60px');
+      left: calc(~'50% - 480px');
+    }
+
+    #parallax-img-2,
+    #parallax-img-3,
+    #parallax-img-4,
+    #parallax-img-5 {
+      top: calc(@eggorias-top~' + 483px');
+    }
+
+    #parallax-img-2 {
+      background-image: url(images/kote/Archivald.png);
+      left: 60%;
+    }
+    
+    #parallax-img-3 {
+      background-image: url(images/kote/Kai.png);
+      left: 18%;
+    }
+    
+    #parallax-img-4 {
+      background-image: url(images/kote/Oswald.png);
+      left: 28%;
+    }
+    
+    #parallax-img-5 {
+      background-image: url(images/kote/Arsger.png);
+      left: 48%;
+    }
+
+    #parallax-img-6 {
+      background-image: url(images/kote/logo.png);
+      background-size: 493px @kote-logo-height;
+      left: 50%;
+      top: calc(@header-height~' + 20px');
+      transform: translateX(-50%);
+      width: 493px;
+    }
   }
 }
