@@ -1,8 +1,27 @@
+<!-- Header -->
 <div class="top-border"></div>
 <div ng-include="'home/social-menu/social-menu.tpl.html'"></div>
+
+<!-- Title bar (cool parallax) -->
 <div ng-include="'home/title-bar/title-bar.tpl.html'"></div>
+
+<!-- main content -->
 <div class="game-content-container">
-  <div ng-include="'home/trailer/trailer.tpl.html'" class="section section-border"></div>
-  <div ng-include="'home/features/features.tpl.html'" class="section section-border"></div>
-  <div ng-include="'home/characters/characters.tpl.html'" class="section section-border"></div>
+  <!-- King of the Eggs' trailer, short description and platforms links -->
+  <div class="section section-border"
+    ng-include="'home/trailer/trailer.tpl.html'">
+  </div>
+
+  <!-- King of the Eggs' features -->
+  <div class="section section-border"
+    ng-include="'home/features/features.tpl.html'">
+  </div>
+
+  <!-- King of the Eggs' characters -->
+  <div class="section section-border"
+    ng-include="'home/characters/characters.tpl.html'">
+  </div>
 </div>
+
+<!-- Footer -->
+<footer class="footer" ng-include="home/footer/footer.tpl.html"></footer>
