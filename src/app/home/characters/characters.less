@@ -5,6 +5,14 @@
     .character {
       .flex-center();
       flex-direction: column;
+
+      @media @phones {
+        flex-direction: row;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
     }
 
     .img-container {
@@ -12,6 +20,10 @@
 
       .egg-img {
         width: 100%;
+      }
+      
+      @media @phones {
+        width: 40%;
       }
     }
 
@@ -35,6 +47,15 @@
       .egg-phrase,
       .egg-phrase * {
         color: @pink;
+      }
+
+      @media @phones {
+        width: 60%;
+        margin-left: 15px;
+
+        .egg-name {
+          margin-top: 0px;
+        }
       }
     }
   }

@@ -15,6 +15,7 @@
   }
 
   .features-wrapper {
+    width: 100%;
     margin: 0 auto;
 
     .feature {
@@ -23,7 +24,7 @@
       padding: 20px;
       border-radius: 6px;
       margin-bottom: 10px;
-  
+
       &:nth-child(even) {
         .img-container {
           order: 2;
@@ -41,6 +42,26 @@
   
       .desc-container {
         margin-left: 15px;
+      }
+
+      @media @phones {
+        flex-wrap: wrap;
+
+        &:nth-child(even) {
+          .img-container {
+            margin-left: 0;
+          }
+        }
+
+        .img-container {
+          order: 1;
+        }
+
+        .desc-container {
+          margin-left: 0;
+          margin-top: 15px;
+          order: 2;
+        }
       }
     }
   }
