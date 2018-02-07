@@ -1,29 +1,19 @@
-/**
- * This is the main application stylesheet. It should include or import all
- * stylesheets used throughout the application as this is the only stylesheet in
- * the Grunt configuration that is automatically processed.
- */
-
-/**
- * First, we include the Twitter Bootstrap LESS files. Only the ones used in the
- * project should be imported as the rest are just wasting space.
- */
-
 @import '../../vendor/bootstrap/less/bootstrap.less';
 
-/**
- * This is our main variables file. We must include it last so we can overwrite any variable
- * definitions in our imported stylesheets.
- */
-
+// ----------------
+// Import variables
+// ----------------
 @import 'variables.less';
 
-/**
- * Typography
- */
+// ----------
+// Typography
+// ----------
 @import url('https://fonts.googleapis.com/css?family=Asap');
 @import 'social-font.less';
 
+// --------------
+// Document setup
+// --------------
 body {
   box-sizing: border-box;
   margin: 0;
@@ -43,21 +33,9 @@ body {
   }
 }
 
-.mrag-button {
-  margin: 0;
-  padding: 10px 20px;
-  background-color: @pink;
-  border: 0;
-  text-align: center;
-  color: @white;
-  max-height: 40px;
-  text-decoration: none;
-}
-
-.right {
-  float: right;
-}
-
+// ---------------------------
+// Classes for text formatting
+// ---------------------------
 .text-center {
   text-align: center;
 }
@@ -80,13 +58,27 @@ body {
   text-decoration:line-through;
 }
 
+// --------------------------
+// Classes for other elements
+// --------------------------
 .section-border {
   border-bottom: 2px dashed @pink;
   width: 80%;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+// -----------------------
+// Import extra LESS files
+// -----------------------
 @import '../app/home/home.less';
 @import "../app/home/social-menu/social-menu.less";
 @import "../app/home/title-bar/title-bar.less";
 @import "../app/home/trailer/trailer.less";
 @import "../app/home/features/features.less";
+@import "../app/home/characters/characters.less";

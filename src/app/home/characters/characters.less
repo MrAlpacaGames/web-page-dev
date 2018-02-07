@@ -1,0 +1,39 @@
+.characters-container {
+  .characters-wrapper {
+    .character {
+      .flex-center();
+      flex-direction: column;
+    }
+
+    .img-container {
+      width: 100%;
+
+      .egg-img {
+        width: 100%;
+      }
+    }
+
+    .desc-container {
+      * {
+        color: @black;
+        .text-center();
+      }
+
+      .egg-name,
+      .egg-attitude {
+        margin-bottom: 10px;
+      }
+
+      .egg-name {
+        margin-top: 20px;
+        font-weight: bold;
+        color: @red;
+      }
+
+      .egg-phrase,
+      .egg-phrase * {
+        color: @pink;
+      }
+    }
+  }
+}
