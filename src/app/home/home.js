@@ -1,27 +1,7 @@
-/**
- * Each section of the site has its own module. It probably also has
- * submodules, though this boilerplate is too simple to demonstrate it. Within
- * `src/app/home`, however, could exist several additional folders representing
- * additional modules that would then be listed as dependencies of this one.
- * For example, a `note` section could have the submodules `note.create`,
- * `note.delete`, `note.edit`, etc.
- *
- * Regardless, so long as dependencies are managed correctly, the build process
- * will automatically take take of the rest.
- *
- * The dependencies block here is also where component dependencies should be
- * specified, as shown below.
- */
 angular.module( 'ngBoilerplate.home', [
   'ui.router',
   'plusOne'
 ])
-
-/**
- * Each section or module of the site can also have its own routes. AngularJS
- * will handle ensuring they are all available at run-time, but splitting it
- * this way makes each module more "self-contained".
- */
 .config(function config( $stateProvider ) {
   $stateProvider.state( 'home', {
     url: '/home',
@@ -35,11 +15,7 @@ angular.module( 'ngBoilerplate.home', [
     data:{ pageTitle: 'Mr. Alpaca Games' }
   });
 })
-
-/**
- * And of course we define a controller for our route.
- */
-.controller( 'HomeCtrl', function HomeController( $scope, $window ) {
+.controller( 'HomeCtrl', function HomeController( $scope, $window, $timeout ) {
   var vm = this;
   vm.mrAlpacaDesc = 'We are Mr. Alpaca Games, a video games studio from Colombia';
 
@@ -48,7 +24,7 @@ angular.module( 'ngBoilerplate.home', [
     var opThresh = 350;
     var opFactor = 750;
     
-    $window.addEventListener("scroll", function(event){
+    $window.addEventListener("scroll", function(event) {
       var top = this.pageYOffset;
       var layers = document.getElementsByClassName("parallax-layer");
       var layer, speed, yPos;
@@ -60,6 +36,34 @@ angular.module( 'ngBoilerplate.home', [
         layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
       }
     });
+
+    $window.addEventListener("resize", handleVideo);
+    $timeout(handleVideo, 200);
+  }
+
+  /*jshint -W065 */
+  function handleVideo() {
+    var vidHolder = document.getElementsByClassName("trailer-wrapper");
+    var iframe = null;
+    var resolution = null;
+    var youtubeHeight = 0;
+    var youtubeWidth = 0;
+
+    for (var i = 0; i < vidHolder.length; i ++) {
+      if  (vidHolder[i] !== undefined) {
+        iframe = vidHolder[i].getElementsByTagName("iframe")[0];
+        youtubeHeight = parseInt(vidHolder[i].getAttribute("data-original-height"));
+        youtubeWidth = parseInt(vidHolder[i].getAttribute("data-original-width"));
+        resolution = youtubeHeight / youtubeWidth;
+
+        if (iframe !== undefined) {
+          iframe.style.width = vidHolder[i].offsetWidth + "px";
+          iframe.style.height = vidHolder[i].style.height = (vidHolder[i].offsetWidth * resolution) + "px"; 
+        }
+
+        lastVideoWidth = vidHolder[i].offsetWidth;
+      }
+    }
   }
 })
 
