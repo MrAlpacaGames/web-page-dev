@@ -6,6 +6,11 @@
   width: 100%;
   height: @header-height;
   z-index: 2;
+
+  @media @phones {
+    height: @header-height-mobile;
+    z-index: 1;
+  }
 }
 
 .game-content-container {
