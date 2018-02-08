@@ -57,12 +57,7 @@ angular.module( 'ngBoilerplate.home', [
         layer = layers[i];
         speed = layer.getAttribute('data-speed');
         yPos = -(top * speed / 100);
-        if (i < layers.length - 1) {
-          layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
-        }
-        else {
-          layer.setAttribute('style', 'transform: translate3d(-50%, ' + yPos + 'px, 0px)');
-        }
+        layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
       }
     });
   }

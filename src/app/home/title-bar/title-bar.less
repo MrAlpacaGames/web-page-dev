@@ -1,84 +1,58 @@
-@kote-logo-height: 340px;
-@eggorias-top: 302px;
-
 .title-bar-container {
   position: relative;
   width: 100%;
 
-  .parallax-container {
+  #parallax-container {
     position: relative;
-    width: 100%;
     background-color: @white;
-  }
-
-  #parallax-wrapper {
-    position: relative;
-    display: block;
-    background-image: url(images/kote/Sea.png);
-    background-size: auto 1080px;
-
-    &.parallax-art,
-    .parallax-layer {
-      height: 1000px;
-    }
+    background-image: url(images/kote/parallax-0.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    overflow: hidden;
+    margin-top: @header-height;
+    padding-bottom: 150%;
 
     .parallax-layer {
       position: absolute;
+      top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-size: auto 483px;
+      background-size: 100%;
       background-repeat: no-repeat;
-    }
-    
-    #parallax-img-0 {
-      background-image: url(images/kote/Eggorias.png);
-      background-size: 960px 540px;
-      top: @eggorias-top;
-      left: calc(~'50% - 480px');
     }
 
     #parallax-img-1 {
-      background-image: url(images/kote/Airheads.png);
-      background-size: 960px 540px;
-      top: calc(@eggorias-top~' + 60px');
-      left: calc(~'50% - 480px');
-    }
-
-    #parallax-img-2,
-    #parallax-img-3,
-    #parallax-img-4,
-    #parallax-img-5 {
-      top: calc(@eggorias-top~' + 483px');
+      background-image: url(images/kote/parallax-1.png);
     }
 
     #parallax-img-2 {
-      background-image: url(images/kote/Archivald.png);
-      left: 60%;
+      background-image: url(images/kote/parallax-2.png);
     }
     
     #parallax-img-3 {
-      background-image: url(images/kote/Kai.png);
-      left: 18%;
+      background-image: url(images/kote/parallax-3.png);
     }
     
     #parallax-img-4 {
-      background-image: url(images/kote/Oswald.png);
-      left: 28%;
+      background-image: url(images/kote/parallax-4.png);
     }
     
     #parallax-img-5 {
-      background-image: url(images/kote/Arsger.png);
-      left: 48%;
+      background-image: url(images/kote/parallax-5.png);
     }
 
     #parallax-img-6 {
-      background-image: url(images/kote/logo.png);
-      background-size: 493px @kote-logo-height;
-      left: 50%;
-      top: calc(@header-height~' + 20px');
-      transform: translateX(-50%);
-      width: 493px;
+      background-image: url(images/kote/parallax-6.png);
+    }
+
+    #parallax-img-7 {
+      background-image: url(images/kote/parallax-7.png);
+    }
+
+    #parallax-img-8 {
+      background-image: url(images/kote/parallax-8.png);
     }
   }
 }
