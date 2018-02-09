@@ -15,13 +15,14 @@ angular.module( 'ngBoilerplate.home', [
     data:{ pageTitle: 'Mr. Alpaca Games' }
   });
 })
-.controller( 'HomeCtrl', function HomeController( $scope, $window, $timeout ) {
+.controller( 'HomeCtrl', function HomeController( $scope, $window, $timeout, $document ) {
   var vm = this;
-  vm.mrAlpacaDesc = 'We are Mr. Alpaca Games, a video games studio from Colombia';
+  var layers = [];
+  var banner = null;
 
   activate();
   function activate() {
-    var opThresh = 350;
+    /* var opThresh = 350;
     var opFactor = 750;
     
     $window.addEventListener("scroll", function(event) {
@@ -35,10 +36,42 @@ angular.module( 'ngBoilerplate.home', [
         yPos = -(top * speed / 100);
         layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
       }
-    });
+    }); */
 
+    $timeout(readDom, 200);
+  }
+  
+  function readDom() {
+    var layerElements = $document[0].querySelectorAll(".parallax-layer");
+    
+    banner = $document[0].querySelectorAll("#parallax-container")[0];
+    for (var i = 0; i < layerElements.length; i ++) {
+      layers.push({
+        element: layerElements[i],
+        scroll: layerElements[i].getAttribute("data-scroll"),
+        offset: layerElements[i].getAttribute("data-yoffset")
+      });
+    }
+    layerElements = null;
+    
+    $document[0].addEventListener("scroll", updateScrollValue);
     $window.addEventListener("resize", handleVideo);
-    $timeout(handleVideo, 200);
+    $window.addEventListener("resize", updateScrollValue);
+    updateScrollValue();
+    handleVideo();
+  }
+
+  // update a speicifc layer offset
+  function updateLayerOffset(scroll, layer) {
+    var offset = -((scroll * layer.scroll) - layer.offset * (banner.clientHeight / 3680));
+    layer.element.style.transform = "translate3d(0, " + offset + "px, 0)";
+  }
+
+  function updateScrollValue() {
+    var scroll = $window.scrollY;
+    for (var i = 0; i < layers.length; i ++) {
+        updateLayerOffset(scroll, layers[i]);
+    }
   }
 
   /*jshint -W065 */
