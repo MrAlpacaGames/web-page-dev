@@ -1,0 +1,131 @@
+@button-size: 32px;
+@button-size-mobile: 40px;
+
+.social-menu-container {
+  position: absolute;
+  top: 0;
+  left: 16px;
+  width: 180px;
+  height: auto;
+  background-color: @pink;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding-bottom: 20px;
+  z-index: 1;
+
+  @media @phones {
+    display: flex;
+    height: @header-height-mobile;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0;
+    padding-bottom: 0;
+    z-index: 2;
+  }
+
+  .logo-container {
+    height: 180px;
+
+    @media @phones {
+      width: @header-height-mobile;
+      height: @header-height-mobile;
+    }
+
+    .logo {
+      background-image: url(images/mr_alpaca/logo_white.png);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      height: 100%;
+      margin: 0 auto;
+      margin-top: 15px;
+
+      @media @phones {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .text-container {
+    width: 80%;
+    margin: 10px auto;
+    .text-center();
+
+    .text {
+      .text-center();
+    }
+  }
+
+  .social-buttons-container {
+    .flex-center();
+    width: 80%;
+    margin: 0 auto !important;
+    margin-top: 20px;
+    .text-center();
+
+    @media @phones {
+      width: auto;
+      margin-top: 0;
+    }
+  
+    .button-wrapper {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+  
+      .social-link {
+        display: flex;
+        text-decoration: none;
+        width: @button-size;
+        height: @button-size;
+
+        @media @phones {
+          width: @button-size-mobile;
+          height: @button-size-mobile;
+        }
+
+        &:hover,
+        &:active,
+        &:visited {
+          text-decoration: none;
+        }
+      
+        &:last-child {
+          .social-icon {
+            margin-right: 0;
+          }
+        }
+      
+        .social-icon {
+          font-size: @button-size;
+          text-decoration: none;
+          width: @button-size;
+          height: @button-size;
+          position: relative;
+          opacity: .8;
+          transition: opacity .3s ease-out;
+
+          @media @phones {
+            font-size: @button-size-mobile;
+            width: @button-size-mobile;
+            height: @button-size-mobile;
+          }
+      
+          &:before {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

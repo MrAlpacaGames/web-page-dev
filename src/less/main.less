@@ -1,38 +1,34 @@
-/**
- * This is the main application stylesheet. It should include or import all
- * stylesheets used throughout the application as this is the only stylesheet in
- * the Grunt configuration that is automatically processed.
- */
-
-/**
- * First, we include the Twitter Bootstrap LESS files. Only the ones used in the
- * project should be imported as the rest are just wasting space.
- */
-
 @import '../../vendor/bootstrap/less/bootstrap.less';
 
-/**
- * This is our main variables file. We must include it last so we can overwrite any variable
- * definitions in our imported stylesheets.
- */
-
+// ----------------
+// Import variables
+// ----------------
 @import 'variables.less';
 
-/**
- * Typography
- */
+// ----------
+// Typography
+// ----------
 @import url('https://fonts.googleapis.com/css?family=Asap');
 @import 'social-font.less';
+
+// --------------
+// Document setup
+// --------------
+html, body {
+  width: 100%;
+  height: 100%;
+}
 
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
+  background-color: @white;
   font-family: 'Asap', sans-serif;
+  box-sizing: border-box;
 
   * {
-    color: @logo;
+    color: @white;
     margin: 0;
     padding: 0;
   }
@@ -43,19 +39,72 @@ body {
   }
 }
 
-.mrag-button {
-  margin: 0;
-  padding: 10px 20px;
-  background-color: @logo;
-  border: 0;
+h1 {
+  font-size: 1.8em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5, p, a, i, b, strong {
+  font-size: 1em;
+}
+
+// ---------------------------
+// Classes for text formatting
+// ---------------------------
+.text-center {
   text-align: center;
-  color: white;
-  max-height: 40px;
 }
 
-.right {
-  float: right;
+.text-black {
+  color: @black;
+  * {
+    color: @black;
+  }
 }
 
+.text-red {
+  color: @red;
+  * {
+    color: @red;
+  }
+}
+
+.line-through {
+  text-decoration:line-through;
+}
+
+// --------------------------
+// Classes for other elements
+// --------------------------
+.section-border {
+  border-bottom: 2px solid @red;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+// -----------------------
+// Import extra LESS files
+// -----------------------
 @import '../app/home/home.less';
-
+@import "../app/home/social-menu/social-menu.less";
+@import "../app/home/title-bar/title-bar.less";
+@import "../app/home/trailer/trailer.less";
+@import "../app/home/features/features.less";
+@import "../app/home/characters/characters.less";
+@import "../app/home/footer/footer.less";

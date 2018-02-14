@@ -1,0 +1,80 @@
+.characters-container {
+  padding: 0 15px;
+
+  .characters-wrapper {
+    .character {
+      .flex-center();
+      flex-direction: column;
+
+      @media @phones {
+        flex-direction: row;
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .img-container {
+      width: 100%;
+
+      .egg-img {
+        width: 100%;
+      }
+      
+      @media @phones {
+        width: 40%;
+      }
+    }
+
+    .desc-container {
+      * {
+        color: @black;
+        .text-center();
+      }
+
+      .egg-name,
+      .egg-attitude {
+        margin-bottom: 10px;
+      }
+
+      .egg-name {
+        margin-top: 20px;
+        font-weight: bold;
+        color: @black;
+        padding: 5px 0;
+        border-radius: 10px;
+
+        &#archivald {
+          background-color: @archivald;
+        }
+
+        &#arsger {
+          background-color: @arsger;
+        }
+
+        &#kai {
+          background-color: @kai;
+        }
+
+        &#oswald {
+          background-color: @oswald;
+        }
+      }
+
+      .egg-phrase,
+      .egg-phrase * {
+        color: @pink;
+      }
+
+      @media @phones {
+        width: 60%;
+        margin-left: 15px;
+
+        .egg-name {
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}

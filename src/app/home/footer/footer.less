@@ -1,0 +1,31 @@
+.footer-container {
+  .flex-center();
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+  background-color: @pink;
+
+  .logos-wrapper {
+    .footer-logo {
+      width: 128px;
+    }
+
+    .mr-alpaca-logo {
+      margin-right: 15px;
+    }
+  }
+
+  .copyright-wrapper {
+    margin-top: 20px;
+
+    * {
+      color: @white;
+      .text-center();
+    }
+
+    .copyright-text:first-child {
+      margin-bottom: 10px;
+    }
+  }
+}
