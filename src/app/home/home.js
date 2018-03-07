@@ -82,6 +82,21 @@ angular.module( 'ngBoilerplate.home', [
       }
     }
   }
+/*// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {stickyBar()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+  function stickyBar() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }*/
 })
 
 ;
